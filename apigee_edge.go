@@ -192,7 +192,7 @@ func NewEdgeClient(o *EdgeClientOptions) (*EdgeClient, error) {
 	if err != nil {
 		return nil, err
 	}
-	baseURL.Path = path.Join(baseURL.Path, "v1/o/", o.Org, "/")
+	baseURL.Path = path.Join(baseURL.Path, "v1/organizations/", o.Org, "/")
 
 	c := &EdgeClient{client: *pesterClient, BaseURL: baseURL, UserAgent: userAgent}
 	c.Proxies = &ProxiesServiceOp{client: c}
