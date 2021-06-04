@@ -384,8 +384,8 @@ func (s *ProxiesServiceOp) Export(proxyName string, rev Revision) (string, *Resp
 	req.Header.Del("Accept")
 
 	t := time.Now()
-	filename := fmt.Sprintf("proxyName-r%d-%d%02d%02d-%02d%02d%02d.zip",
-		rev, t.Year(), t.Month(), t.Day(),
+	filename := fmt.Sprintf("%s-r%d-%d%02d%02d-%02d%02d%02d.zip",
+		proxyName, rev, t.Year(), t.Month(), t.Day(),
 		t.Hour(), t.Minute(), t.Second())
 
 	out, e := os.Create(filename)
